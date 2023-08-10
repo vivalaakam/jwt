@@ -27,6 +27,7 @@ export default function DL() {
         const manualAnchor = document.querySelector("#manual");
 
         if (/Android/i.test(window.navigator.userAgent)) {
+        alert('android');
           let intentURL = 'intent://${appPath}#Intent;scheme=${appName};package=${appPackage};action=android.intent.action.VIEW;category=android.intent.category.DEFAULT;category=android.intent.category.BROWSABLE;';
 
           if (fallback) {
@@ -45,6 +46,7 @@ export default function DL() {
         }
 
         if (/iPhone|iPad|iPod/i.test(window.navigator.userAgent)) {
+        alert('ios');
           const deepLink = '${appName}://${appPath}';
 
           manualAnchor.setAttribute("href", deepLink);
